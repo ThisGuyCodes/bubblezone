@@ -186,6 +186,11 @@ func (m *Manager) Get(id string) (zone *ZoneInfo) {
 	return zone
 }
 
+// ReverseId returns the ID for a given ZoneInfo.
+func (m *Manager) ReverseId(zone *ZoneInfo) string {
+	return m.getReverse(zone.id)
+}
+
 // getReverse returns the component ID from a generated ID (that includes ANSI
 // escape codes).
 func (m *Manager) getReverse(id string) (resolved string) {

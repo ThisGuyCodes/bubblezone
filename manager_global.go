@@ -115,6 +115,12 @@ func Get(id string) (a *ZoneInfo) {
 	return DefaultManager.Get(id)
 }
 
+// ReverseId returns the ID for a given ZoneInfo.
+func ReverseId(zone *ZoneInfo) string {
+	DefaultManager.checkInitialized()
+	return DefaultManager.getReverse(zone.id)
+}
+
 // Scan will scan the view output, searching for zone markers, returning the
 // original view output with the zone markers stripped. Scan() should be used
 // by the outer most model/component of your application, and not inside of a
