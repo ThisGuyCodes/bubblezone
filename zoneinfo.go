@@ -18,6 +18,11 @@ type ZoneInfo struct {
 	EndY int // EndY is the y coordinate of the bottom right cell of the zone (with 0 basis).
 }
 
+// Id returns the id of the zone
+func (z ZoneInfo) Id() string {
+	return z.id
+}
+
 // IsZero returns true if the zone isn't known yet (is nil).
 func (z *ZoneInfo) IsZero() bool {
 	if z == nil {
